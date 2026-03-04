@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Loan Assessment | Naurin Services{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0; background: linear-gradient(to bottom, var(--background), #fff);"
+    class="animate-fade-in">
+    <div class="container">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div
+                    style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: var(--primary-alpha); color: var(--primary); border-radius: 50%; box-shadow: var(--shadow-sm); margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-magnifying-glass-dollar" style="font-size: 1.75rem;"></i>
+                </div>
+                <h2 style="font-size: 2.75rem; margin-bottom: 1rem;">Loan Eligibility Assessment</h2>
+                <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 700px; margin: 0 auto;">Process
+                    your data securely through our proprietary ML classification model to receive an instant, highly
+                    accurate loan decision.</p>
+            </div>
+
+            <div class="form-card"
+                style="padding: 0; box-shadow: var(--shadow-xl); border: 1px solid var(--border); overflow: hidden;">
+                <!-- Form Banner -->
+                <div
+                    style="background: var(--surface); border-bottom: 1px solid var(--border); padding: 1.5rem 2.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <i class="fa-solid fa-lock" style="color: var(--text-secondary);"></i>
+                    <span style="color: var(--text-secondary); font-weight: 500; font-size: 0.95rem;">256-bit Secure
+                        Encrypted Connection</span>
+                </div>
+
+                <div style="padding: 3rem 2.5rem;">
+                    <form action="/predict" method="post" class="form-grid">
+
+                        <h4 class="form-group full-width"
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; color: var(--secondary); margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin-top: 1rem;">
+                            Personal Information</h4>
+
+                        <div class="form-group">
+                            <label for="Age">Applicant Age</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="number" id="Age" name="Age" placeholder="e.g. 29" required min="18">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Gender">Gender</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                <select id="Gender" name="Gender" required>
+                                    <option value="" disabled selected>Select Gender</option>
+                                    <option value="0">Female</option>
+                                    <option value="1">Male</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Education">Education Level</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <select id="Education" name="Education" required>
+                                    <option value="" disabled selected>Select Education</option>
+                                    <option value="0">Non-Graduate</option>
+                                    <option value="1">Graduate</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Home_ownership">Housing Status</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-house-chimney"></i>
+                                <select id="Home_ownership" name="Home_ownership" required>
+                                    <option value="" disabled selected>Select Ownership</option>
+                                    <option value="0">Rented</option>
+                                    <option value="1">Owned / Mortgage</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h4 class="form-group full-width"
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; color: var(--secondary); margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin-top: 1.5rem;">
+                            Financial Details</h4>
+
+                        <div class="form-group">
+                            <label for="Income">Annual Income ($)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-sack-dollar"></i>
+                                <input type="number" step="any" id="Income" name="Income" placeholder="e.g. 85000"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Emp_exp">Employment Experience (Years)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <input type="number" id="Emp_exp" name="Emp_exp" placeholder="e.g. 5" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="credit_score">Credit Score</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <input type="number" id="credit_score" name="credit_score" min="300" max="850"
+                                    placeholder="300-850" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cb_person_cred_hist_length">Credit History Length (Years)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-regular fa-calendar-check"></i>
+                                <input type="number" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length"
+                                    placeholder="e.g. 4" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="previous_loan_defaults_on_file">Previous Loan Defaults</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <select id="previous_loan_defaults_on_file" name="previous_loan_defaults_on_file"
+                                    required>
+                                    <option value="" disabled selected>Select Default History</option>
+                                    <option value="0">No, Clean Record</option>
+                                    <option value="1">Yes, Exists on Record</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <h4 class="form-group full-width"
+                            style="font-family: 'Inter', sans-serif; font-size: 1.15rem; color: var(--secondary); margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-light); margin-top: 1.5rem;">
+                            Loan Requirements</h4>
+
+                        <div class="form-group">
+                            <label for="loan_amnt">Requested Loan Amount ($)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-money-check-dollar"></i>
+                                <input type="number" id="loan_amnt" name="loan_amnt" placeholder="e.g. 25000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loan_intent">Loan Intent Code</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-bullseye"></i>
+                                <input type="number" id="loan_intent" name="loan_intent" placeholder="e.g. 0-6"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loan_int_rate">Desired Interest Rate (%)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-percent"></i>
+                                <input type="number" step="any" id="loan_int_rate" name="loan_int_rate"
+                                    placeholder="e.g. 8.5" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loan_percent_income">Debt to Income Ratio (0-1)</label>
+                            <div class="input-icon-wrap">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <input type="number" step="any" id="loan_percent_income" name="loan_percent_income"
+                                    placeholder="e.g. 0.25" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width" style="margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; border-radius: var(--radius-lg); padding: 1.25rem; font-size: 1.15rem;">
+                                <i class="fa-solid fa-microchip" style="margin-right: 8px;"></i> Run Predictive AI
+                                Assessment
+                            </button>
+                            <p
+                                style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                                By clicking "Run Predictive AI Assessment", you agree to our Terms of Service & Privacy
+                                Policy.</p>
+                        </div>
+
+                    </form>
+
+                    {% if prediction_text %}
+                    <div id="result" class="animate-fade-in"
+                        style="margin-top: 3rem; padding: 2.5rem; border-radius: var(--radius-xl); text-align: center; border: 2px solid {% if 'Not' in prediction_text %}rgba(239, 68, 68, 0.3){% else %}rgba(16, 185, 129, 0.3){% endif %}; background: {% if 'Not' in prediction_text %}linear-gradient(to bottom right, #fef2f2, #fff){% else %}linear-gradient(to bottom right, #f0fdf4, #fff){% endif %}; box-shadow: {% if 'Not' in prediction_text %}0 10px 25px rgba(239,68,68,0.1){% else %}0 10px 25px rgba(16,185,129,0.1){% endif %}; position: relative; overflow: hidden;">
+
+                        <div
+                            style="font-size: 4rem; margin-bottom: 1rem; color: {% if 'Not' in prediction_text %}#ef4444{% else %}#10b981{% endif %};">
+                            {% if 'Not' in prediction_text %}
+                            <i class="fa-regular fa-circle-xmark"></i>
+                            {% else %}
+                            <i class="fa-regular fa-circle-check"></i>
+                            {% endif %}
+                        </div>
+
+                        <h3
+                            style="color: {% if 'Not' in prediction_text %}#b91c1c{% else %}#047857{% endif %}; font-size: 2rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">
+                            {% if 'Not' in prediction_text %}Assessment Rejected{% else %}Assessment Approved{% endif %}
+                        </h3>
+
+                        <p
+                            style="color: var(--text-primary); font-size: 1.25rem; font-weight: 500; margin-bottom: 1.5rem;">
+                            {{ prediction_text }}</p>
+
+                        <div
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--surface); padding: 0.5rem 1.25rem; border-radius: 2rem; font-size: 0.875rem; color: var(--text-secondary); border: 1px solid var(--border);">
+                            <i class="fa-solid fa-robot" style="color: var(--primary);"></i> Based on algorithmic
+                            analysis of your financial profile.
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

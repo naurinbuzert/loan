@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Premium Loan Assessment | Naurin Services{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏦</text></svg>">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="nav-brand">
+                <i class="fa-solid fa-building-columns" style="color: var(--primary); font-size: 1.75rem;"></i>
+                <span>Naurin Services</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="{% if request.path == '/' %}active{% endif %}"><i class="fa-solid fa-house"
+                        style="margin-right: 6px;"></i> Home</a>
+                <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}"><i
+                        class="fa-regular fa-envelope" style="margin-right: 6px;"></i> Contact</a>
+                <a href="/loan" class="nav-cta {% if request.path == '/loan' %}active{% endif %}">Get Started <i
+                        class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="flex: 1; display: flex; flex-direction: column;">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><i class="fa-solid fa-building-columns" style="color: var(--primary);"></i> Naurin Services</h3>
+                    <p>Empowering individuals and businesses with intelligent, enterprise-grade AI financial solutions
+                        for a secure, predictable future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="/"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> Home
+                                Overview</a></li>
+                        <li><a href="/loan"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> AI Loan
+                                Assessment</a></li>
+                        <li><a href="/contact"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> Contact
+                                Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company & Legal</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> Privacy
+                                Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> Terms of
+                                Service</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angle-right"
+                                    style="font-size: 0.8em; margin-right: 6px; color: var(--primary);"></i> Enterprise
+                                Security</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Naurin Services. All rights reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="color: var(--text-secondary); transition: var(--transition-fast);"><i
+                            class="fa-brands fa-linkedin" style="font-size: 1.25rem;"></i></a>
+                    <a href="#" style="color: var(--text-secondary); transition: var(--transition-fast);"><i
+                            class="fa-brands fa-twitter" style="font-size: 1.25rem;"></i></a>
+                    <a href="#" style="color: var(--text-secondary); transition: var(--transition-fast);"><i
+                            class="fa-brands fa-github" style="font-size: 1.25rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Enterprise AI | Naurin Services{% endblock %}
+
+{% block content %}
+<section class="hero animate-fade-in">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content" style="text-align: left;">
+                <div
+                    style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--success-bg); color: var(--primary-dark); padding: 0.35rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.875rem; margin-bottom: 2rem; border: 1px solid rgba(16,185,129,0.2);">
+                    <i class="fa-solid fa-circle-check" style="font-size: 1rem;"></i> 99.9% Accuracy Rate
+                </div>
+                <h1>Financial Clarity <br><span class="text-gradient">Powered by AI</span></h1>
+                <p style="margin-left: 0; text-align: left;">Make informed decisions with our enterprise-grade loan
+                    assessment platform. Experience instant, accurate, and military-grade secure financial forecasting
+                    tailored for your success.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="/loan" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> Free Assessment</a>
+                    <a href="/contact" class="btn btn-secondary"><i class="fa-regular fa-comments"></i> Talk to
+                        Sales</a>
+                </div>
+
+                <div style="display: flex; gap: 2rem; margin-top: 3rem; align-items: center;">
+                    <div>
+                        <h4 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">10M+</h4>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">Assessments
+                            Run</span>
+                    </div>
+                    <div style="width: 1px; height: 30px; background: var(--border);"></div>
+                    <div>
+                        <h4 style="font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.25rem;">$2B+</h4>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">Loans
+                            Processed</span>
+                    </div>
+                    <div style="width: 1px; height: 30px; background: var(--border);"></div>
+                    <div>
+                        <div
+                            style="display: flex; gap: 0.25rem; color: #fbbf24; font-size: 1rem; margin-bottom: 0.5rem; align-items: center; justify-content: center; height: 1.5rem;">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">4.9/5 Trust
+                            Score</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div
+                    style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--primary-alpha), rgba(59, 130, 246, 0.1)); display: flex; align-items: center; justify-content: center;">
+                    <div style="background: var(--surface); padding: 2.5rem; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); max-width: 350px; width: 100%; border: 1px solid var(--border-light); transform: rotate(2deg); transition: transform 0.3s;"
+                        onmouseover="this.style.transform='rotate(0deg) scale(1.02)'"
+                        onmouseout="this.style.transform='rotate(2deg)'">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary-alpha); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(59,130,246,0.1); color: var(--accent); display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem; font-size: 1.25rem; color: var(--secondary);">AI Approval
+                            Model</h4>
+                        <div
+                            style="width: 100%; height: 8px; background: var(--border); border-radius: 4px; margin-bottom: 1rem; overflow: hidden;">
+                            <div
+                                style="width: 85%; height: 100%; background: var(--primary-gradient); border-radius: 4px;">
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            <span>Validation Score</span>
+                            <span style="color: var(--primary); font-weight: 600;">Excellent</span>
+                        </div>
+                        <div
+                            style="padding: 1rem; border-radius: var(--radius-md); background: var(--background); border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                            <i class="fa-solid fa-check-circle" style="color: var(--primary); font-size: 1.25rem;"></i>
+                            <span style="font-weight: 500; font-size: 0.9rem;">Ready for assessment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="form-header">
+            <span
+                style="color: var(--primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.875rem; margin-bottom: 1rem; display: inline-block;">Enterprise
+                Capabilities</span>
+            <h2>Why Choose Naurin?</h2>
+            <p style="max-width: 600px; margin: 0 auto;">We leverage advanced machine learning models to give you
+                unparalleled financial insights with bank-grade security protocols.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card delay-100 animate-slide-up" style="opacity: 0;">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <h3 class="mb-4">Instant Processing</h3>
+                <p style="color: var(--text-secondary);">Our sophisticated logistic regression engines assess complex
+                    financial footprints securely, returning detailed outcomes within milliseconds.</p>
+            </div>
+
+            <div class="feature-card delay-200 animate-slide-up" style="opacity: 0;">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="mb-4">Bank-Level Security</h3>
+                <p style="color: var(--text-secondary);">Your financial privacy is our absolute priority. All
+                    transmissions use 256-bit encryption and comply with global data protection regulations.</p>
+            </div>
+
+            <div class="feature-card delay-300 animate-slide-up" style="opacity: 0;">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="mb-4">Actionable Analytics</h3>
+                <p style="color: var(--text-secondary);">Gain deeper understanding of the precise economic variables
+                    affecting your eligibility, complete with predictive financial remodeling.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section
+    style="padding: 6rem 0; background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); text-align: center; color: white;">
+    <div class="container animate-slide-up" style="max-width: 800px;">
+        <h2 style="color: white; font-size: 3rem; margin-bottom: 1.5rem;">Ready to discover your potential?</h2>
+        <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-bottom: 3rem;">Join thousands of businesses
+            and individuals utilizing our predictive AI tools to secure their financial futures.</p>
+        <a href="/loan" class="btn btn-primary" style="font-size: 1.15rem; padding: 1rem 3rem;"><i
+                class="fa-solid fa-rocket"></i> Start Assessment Now</a>
+    </div>
+</section>
+{% endblock %}
